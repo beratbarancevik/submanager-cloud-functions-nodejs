@@ -2,7 +2,8 @@
 'use strict';
 
 const functions = require('firebase-functions');
-const admin = require('./connection/firebase');
+const admin = require('firebase-admin');
+admin.initializeApp();
 const mysql = require('./connection/mysql');
 
 exports.automaticallySaveUserToFirestore = functions.auth.user().onCreate(async (user) => {
