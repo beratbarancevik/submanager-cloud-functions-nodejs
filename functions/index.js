@@ -11,7 +11,7 @@ exports.automaticallySaveUserToFirestore = functions.auth.user().onCreate(async 
         const userId = user.uid;
         const username = generateRandomUsername();
         let userData = {
-            userId: userId,
+            id: userId,
             username: username,
             createdAt: admin.firestore.FieldValue.serverTimestamp(),
             updatedAt: admin.firestore.FieldValue.serverTimestamp()
